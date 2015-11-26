@@ -83,28 +83,28 @@ void computeSubgroupsOfDn(int n) {
     }
     
     
-//    unsigned int numCosets;
-//    Set<DihedralIsometry> **leftCosets = mySubgroup->leftCosets(&numCosets);
-//    cout << numCosets << " left cosets" << endl;
-//    for (int i = 0; i < numCosets; i++) {
-//        Set<DihedralIsometry> *coset = leftCosets[i];
-//        coset->print(cout);
-//    }
-//    
-//    
-//    Set<DihedralIsometry> **rightCosets = mySubgroup->rightCosets(&numCosets);
-//    cout << numCosets << " right cosets" << endl;
-//    for (int i = 0; i < numCosets; i++) {
-//        Set<DihedralIsometry> *coset = rightCosets[i];
-//        coset->print(cout);
-//    }
-//    
-//    cout << "Is H normal? " << mySubgroup->isNormal() << endl;
-//    
-//    
-//    Subgroup<DihedralIsometry>::freeSubgroups(subgroups, numSubgroups);
-//    Set<DihedralIsometry>::freeSets(leftCosets, numCosets);
-//    Set<DihedralIsometry>::freeSets(rightCosets, numCosets);
+   unsigned int numCosets;
+   Set<DihedralIsometry> **leftCosets = mySubgroup->leftCosets(&numCosets);
+   cout << numCosets << " left cosets" << endl;
+   for (int i = 0; i < numCosets; i++) {
+       Set<DihedralIsometry> *coset = leftCosets[i];
+       coset->print(cout);
+   }
+   
+   
+   Set<DihedralIsometry> **rightCosets = mySubgroup->rightCosets(&numCosets);
+   cout << numCosets << " right cosets" << endl;
+   for (int i = 0; i < numCosets; i++) {
+       Set<DihedralIsometry> *coset = rightCosets[i];
+       coset->print(cout);
+   }
+   
+   cout << "Is H normal? " << mySubgroup->isNormal() << endl;
+   
+   
+   Subgroup<DihedralIsometry>::freeSubgroups(subgroups, numSubgroups);
+   Set<DihedralIsometry>::freeSets(leftCosets, numCosets);
+   Set<DihedralIsometry>::freeSets(rightCosets, numCosets);
     
     delete D3;
     delete mySubgroup;

@@ -18,7 +18,7 @@ private:
     Group<T> *superGroup;
     
 public:
-    Subgroup(T *s, unsigned int c, Group<T> *sg) : superGroup(sg), Group<T>(s, c, sg->getOperation()) { }
+    Subgroup(T *s, unsigned int c, Group<T> *sg) : Group<T>(s, c, sg->getOperation()), superGroup(sg) { }
     
     // Assumes that isGroup() and superGroup.isGroup() is already true.
     bool isNormal() const;

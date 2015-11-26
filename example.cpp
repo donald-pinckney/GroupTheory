@@ -46,7 +46,7 @@ void computeSubgroupsOfSn(int n) {
     delete S3;
 }
 
-
+// Example 2: Computing subgroups of Dn, and some cosets.
 void computeSubgroupsOfDn(int n) {
     cout << "Starting computation of Dn" << endl;
     

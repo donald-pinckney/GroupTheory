@@ -11,3 +11,8 @@ Consider this a playground for implementing fun group theory operations.
 - Cosets
   - Compute left cosets of a subgroup
   - Compute right cosets of a subgroup
+- Common Groups
+  - Includes functions to create the Symmetric group and Dihedral group.
+
+## Examples
+See [example.cpp](https://github.com/donald-pinckney/GroupTheory/blob/master/example.cpp) for some examples.

@@ -16,3 +16,6 @@ Consider this a playground for implementing fun group theory operations.
 
 ## Examples
 See [example.cpp](https://github.com/donald-pinckney/GroupTheory/blob/master/example.cpp) for some examples.
+
+## Building the Examples
+Building should be as easy as running the `make` command, assuming your machine has GNU Make and g++ installed.

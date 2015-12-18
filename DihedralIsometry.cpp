@@ -7,6 +7,7 @@
 //
 
 #include "DihedralIsometry.h"
+#include <stdlib.h>
 
 int rotationMod(int rotationIndex, int mod) {
     int mult = abs(rotationIndex) / mod + 1;

@@ -80,9 +80,6 @@ Permutation *Permutation::generatePermutations(unsigned int n, unsigned int *cou
         i++;
     } while(std::next_permutation(nums, nums + n));
     
-    if(i != *count) {
-        printf("ERROR: count != factorial(n).\n");
-    }
     
     delete [] nums;
     

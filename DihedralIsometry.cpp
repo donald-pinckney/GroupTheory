@@ -36,7 +36,7 @@ DihedralIsometry *DihedralIsometry::generateIsometries(unsigned int n, unsigned 
     
     DihedralIsometry *isos = new DihedralIsometry[*count];
     
-    for (int i = 0; i < n; i++) {
+    for (unsigned int i = 0; i < n; i++) {
         isos[i].n = n;
         isos[i].reflects = false;
         isos[i].rotationIndex = i;

@@ -22,7 +22,7 @@ void Set<T>::print(std::ostream &s) const {
 
 template <typename T>
 void Set<T>::freeSets(Set<T> **sets, unsigned int setCount) {
-    for (int i = 0; i < setCount; i++) {
+    for (unsigned int i = 0; i < setCount; i++) {
         delete sets[i];
     }
     delete [] sets;

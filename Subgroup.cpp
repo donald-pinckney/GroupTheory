@@ -54,7 +54,7 @@ bool Subgroup<T>::isNormal() const {
             const T *res = this->operation(g, *rhs);
             
             bool found = false;
-            for (int k = 0; k < this->setCount; k++) {
+            for (unsigned int k = 0; k < this->setCount; k++) {
                 if(this->set[k] == *res) {
                     found = true;
                     break;
@@ -142,11 +142,11 @@ Set<T> **Subgroup<T>::leftCosets(unsigned int *cosetCount) {
     int cosetIndex = 0;
     
     const T *superSet = superGroup->getSet();
-    for (int i = 0; i < groupCount; i++) {
+    for (unsigned int i = 0; i < groupCount; i++) {
         const T &a = superSet[i];
         T **newSet = new T*[myCount];
         
-        for (int j = 0; j < myCount; j++) {
+        for (unsigned int j = 0; j < myCount; j++) {
             newSet[j] = this->operation(a, this->set[j]);
         }
         
@@ -154,7 +154,7 @@ Set<T> **Subgroup<T>::leftCosets(unsigned int *cosetCount) {
         // Check if newSet is already contained in cosets
         T *compareTo = newSet[0];
         bool isUnique = true;
-        for (int j = 0; j < numCosets; j++) {
+        for (unsigned int j = 0; j < numCosets; j++) {
             T **coset = cosets[j];
             if(coset == NULL) {
                 break;
@@ -162,7 +162,7 @@ Set<T> **Subgroup<T>::leftCosets(unsigned int *cosetCount) {
             
             
             bool foundMatch = false;
-            for (int k = 0; k < myCount; k++) {
+            for (unsigned int k = 0; k < myCount; k++) {
                 if(*(coset[k]) == *compareTo) {
                     foundMatch = true;
                     break;
@@ -175,7 +175,7 @@ Set<T> **Subgroup<T>::leftCosets(unsigned int *cosetCount) {
         }
         
         if(!isUnique) {
-            for (int j = 0; j < myCount; j++) {
+            for (unsigned int j = 0; j < myCount; j++) {
                 delete newSet[j];
             }
             delete [] newSet;
@@ -188,10 +188,10 @@ Set<T> **Subgroup<T>::leftCosets(unsigned int *cosetCount) {
     
     
     Set<T> **cosetsFinal = new Set<T>*[numCosets];
-    for (int i = 0; i < numCosets; i++) {
+    for (unsigned int i = 0; i < numCosets; i++) {
         T **coset = cosets[i];
         T *tempCoset = new T[myCount];
-        for (int j = 0; j < myCount; j++) {
+        for (unsigned int j = 0; j < myCount; j++) {
             tempCoset[j] = *(coset[j]);
             delete coset[j];
         }
@@ -226,11 +226,11 @@ Set<T> **Subgroup<T>::rightCosets(unsigned int *cosetCount) {
     int cosetIndex = 0;
     
     const T *superSet = superGroup->getSet();
-    for (int i = 0; i < groupCount; i++) {
+    for (unsigned int i = 0; i < groupCount; i++) {
         const T &a = superSet[i];
         T **newSet = new T*[myCount];
         
-        for (int j = 0; j < myCount; j++) {
+        for (unsigned int j = 0; j < myCount; j++) {
             newSet[j] = this->operation(this->set[j], a);
         }
         
@@ -238,7 +238,7 @@ Set<T> **Subgroup<T>::rightCosets(unsigned int *cosetCount) {
         // Check if newSet is already contained in cosets
         T *compareTo = newSet[0];
         bool isUnique = true;
-        for (int j = 0; j < numCosets; j++) {
+        for (unsigned int j = 0; j < numCosets; j++) {
             T **coset = cosets[j];
             if(coset == NULL) {
                 break;
@@ -246,7 +246,7 @@ Set<T> **Subgroup<T>::rightCosets(unsigned int *cosetCount) {
             
             
             bool foundMatch = false;
-            for (int k = 0; k < myCount; k++) {
+            for (unsigned int k = 0; k < myCount; k++) {
                 if(*(coset[k]) == *compareTo) {
                     foundMatch = true;
                     break;
@@ -259,7 +259,7 @@ Set<T> **Subgroup<T>::rightCosets(unsigned int *cosetCount) {
         }
         
         if(!isUnique) {
-            for (int j = 0; j < myCount; j++) {
+            for (unsigned int j = 0; j < myCount; j++) {
                 delete newSet[j];
             }
             delete [] newSet;
@@ -272,10 +272,10 @@ Set<T> **Subgroup<T>::rightCosets(unsigned int *cosetCount) {
     
     
     Set<T> **cosetsFinal = new Set<T>*[numCosets];
-    for (int i = 0; i < numCosets; i++) {
+    for (unsigned int i = 0; i < numCosets; i++) {
         T **coset = cosets[i];
         T *tempCoset = new T[myCount];
-        for (int j = 0; j < myCount; j++) {
+        for (unsigned int j = 0; j < myCount; j++) {
             tempCoset[j] = *(coset[j]);
             delete coset[j];
         }

@@ -22,7 +22,7 @@ Permutation *Permutation::compose(const Permutation &x, const Permutation &y) {
     r->count = x.count;
     r->values = new unsigned int[x.count];
     
-    for (int i = 0; i < x.count; i++) {
+    for (unsigned int i = 0; i < x.count; i++) {
         r->values[i] = x.values[y.values[i] - 1];
     }
     return r;
@@ -34,7 +34,7 @@ bool operator==(const Permutation &lhs, const Permutation &rhs) {
         return false;
     }
     
-    for (int i = 0; i < lhs.count; i++) {
+    for (unsigned int i = 0; i < lhs.count; i++) {
         if(lhs.values[i] != rhs.values[i]) {
             return false;
         }
@@ -48,7 +48,7 @@ bool operator!=(const Permutation &lhs, const Permutation &rhs) {
 
 std::ostream & operator<<(std::ostream &lhs, const Permutation &rhs) {
     lhs << '(';
-    for (int i = 0; i < rhs.count; i++) {
+    for (unsigned int i = 0; i < rhs.count; i++) {
         lhs << rhs.values[i];
         if (i != rhs.count - 1) {
             lhs << ' ';
@@ -66,11 +66,11 @@ Permutation *Permutation::generatePermutations(unsigned int n, unsigned int *cou
     Permutation *newPerms = new Permutation[*count];
     
     unsigned int *nums = new unsigned int[n];
-    for (int i = 0; i < n; i++) {
+    for (unsigned int i = 0; i < n; i++) {
         nums[i] = i + 1;
     }
     
-    int i = 0;
+    unsigned int i = 0;
     do {
         newPerms[i].values = new unsigned int[n];
         memcpy(newPerms[i].values, nums, sizeof(unsigned int) * n);

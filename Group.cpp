@@ -9,14 +9,14 @@
 
 template <typename T>
 bool Group<T>::closed() {
-    for(int i = 0; i < this->setCount; i++) {
+    for(unsigned int i = 0; i < this->setCount; i++) {
         const T &x = this->set[i];
-        for(int j = 0; j < this->setCount; j++) {
+        for(unsigned int j = 0; j < this->setCount; j++) {
             const T &y = this->set[j];
             T *result = operation(x, y);
             
             bool found = false;
-            for (int k = 0; k < this->setCount; k++) {
+            for (unsigned int k = 0; k < this->setCount; k++) {
                 if(this->set[k] == *result) {
                     found = true;
                     break;
@@ -38,11 +38,11 @@ bool Group<T>::closed() {
  
 template <typename T>
 const T* Group<T>::identity() {
-    for (int i = 0; i < this->setCount; i++) {
+    for (unsigned int i = 0; i < this->setCount; i++) {
         T &e = this->set[i];
         bool foundIdentity = true;
         
-        for (int j = 0; j < this->setCount; j++) {
+        for (unsigned int j = 0; j < this->setCount; j++) {
             T &x = this->set[j];
             T *res1 = operation(e, x);
             T *res2 = operation(x, e);
@@ -70,7 +70,7 @@ const T* Group<T>::identity() {
 
 template <typename T>
 const T* Group<T>::inverse(const T &a, const T& e) {
-    for (int i = 0; i < this->setCount; i++) {
+    for (unsigned int i = 0; i < this->setCount; i++) {
         T &aInv = this->set[i];
         T *res1 = operation(a, aInv);
         T *res2 = operation(aInv, a);
@@ -98,7 +98,7 @@ bool Group<T>::closedUnderInverse() {
         return false;
     }
     
-    for (int i = 0; i < this->setCount; i++) {
+    for (unsigned int i = 0; i < this->setCount; i++) {
         T *x = this->set + i;
         if (inverse(*x, *e) == NULL) {
             return false;

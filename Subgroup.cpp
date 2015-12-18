@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <math.h>
+#include <strings.h>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ void incrementMask(char *mask, unsigned int maskSize, unsigned int *maskSetCount
     
     unsigned int setCount = 0;
     
-    for (int i = 0; i < maskSize - 1; i++) {
+    for (unsigned int i = 0; i < maskSize - 1; i++) {
         if(mask[i] == 2) {
             mask[i] = 0;
             mask[i + 1]++;
@@ -42,11 +43,11 @@ bool Subgroup<T>::isNormal() const {
     const T *superSet = superGroup->getSet();
     unsigned int superCount = superGroup->getSetCount();
     
-    for (int i = 0; i < superCount; i++) {
+    for (unsigned int i = 0; i < superCount; i++) {
         const T &g = superSet[i];
         const T *gInv = superGroup->inverse(g, *superIdentity);
         
-        for (int j = 0; j < this->setCount; j++) {
+        for (unsigned int j = 0; j < this->setCount; j++) {
             const T &h = this->set[j];
             
             const T *rhs = this->operation(h, *gInv);
@@ -88,7 +89,7 @@ Subgroup<T> **Subgroup<T>::generateSubgroups(Group<T> *G, unsigned long long *su
         T *newSet = new T[maskSetCount];
         
         int insertIndex = 0;
-        for (int j = 0; j < setCount; j++) {
+        for (unsigned int j = 0; j < setCount; j++) {
             if(mask[j]) {
                 newSet[insertIndex] = set[j];
                 insertIndex++;

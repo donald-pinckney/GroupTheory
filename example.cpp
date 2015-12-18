@@ -28,7 +28,7 @@ void computeSubgroupsOfSn(int n) {
     
     vector<Subgroup<Permutation> *> normalSubgroups;
     
-    for (int i = 0; i < numSubgroups; i++) {
+    for (unsigned long long i = 0; i < numSubgroups; i++) {
         Subgroup<Permutation> *subgroup = subgroups[i];
         subgroup->print(cout);
         
@@ -38,7 +38,7 @@ void computeSubgroupsOfSn(int n) {
     }
     
     cout << normalSubgroups.size() << " normal subgroups: " << endl;
-    for (auto it = normalSubgroups.begin(); it != normalSubgroups.end(); it++) {
+    for (vector<Subgroup<Permutation> *>::const_iterator it = normalSubgroups.begin(); it != normalSubgroups.end(); it++) {
         (*it)->print(cout);
     }
     
@@ -59,7 +59,7 @@ void computeSubgroupsOfDn(int n) {
     
     vector<Subgroup<DihedralIsometry> *> normalSubgroups;
     
-    for (int i = 0; i < numSubgroups; i++) {
+    for (unsigned long long i = 0; i < numSubgroups; i++) {
         Subgroup<DihedralIsometry> *subgroup = subgroups[i];
         subgroup->print(cout);
         
@@ -69,7 +69,7 @@ void computeSubgroupsOfDn(int n) {
     }
     
     cout << normalSubgroups.size() << " normal subgroups: " << endl;
-    for (auto it = normalSubgroups.begin(); it != normalSubgroups.end(); it++) {
+    for (vector<Subgroup<DihedralIsometry> *>::const_iterator it = normalSubgroups.begin(); it != normalSubgroups.end(); it++) {
         (*it)->print(cout);
     }
     
@@ -86,7 +86,7 @@ void computeSubgroupsOfDn(int n) {
    unsigned int numCosets;
    Set<DihedralIsometry> **leftCosets = mySubgroup->leftCosets(&numCosets);
    cout << numCosets << " left cosets" << endl;
-   for (int i = 0; i < numCosets; i++) {
+   for (unsigned int i = 0; i < numCosets; i++) {
        Set<DihedralIsometry> *coset = leftCosets[i];
        coset->print(cout);
    }
@@ -94,7 +94,7 @@ void computeSubgroupsOfDn(int n) {
    
    Set<DihedralIsometry> **rightCosets = mySubgroup->rightCosets(&numCosets);
    cout << numCosets << " right cosets" << endl;
-   for (int i = 0; i < numCosets; i++) {
+   for (unsigned int i = 0; i < numCosets; i++) {
        Set<DihedralIsometry> *coset = rightCosets[i];
        coset->print(cout);
    }

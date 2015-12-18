@@ -11,7 +11,7 @@
 template <typename T>
 void Set<T>::print(std::ostream &s) const {
     s << '{';
-    for (int i = 0; i < setCount; i++) {
+    for (unsigned int i = 0; i < setCount; i++) {
         s << set[i];
         if (i != setCount - 1) {
             s << ", ";

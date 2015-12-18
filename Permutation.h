@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <algorithm>
 #include <iostream>
+#include <string.h>
 
 
 unsigned int factorial(unsigned int n);

@@ -1,4 +1,5 @@
-# GroupTheory
+
+# GroupTheory [![Build Status](https://travis-ci.org/donald-pinckney/GroupTheory.svg?branch=master)](https://travis-ci.org/donald-pinckney/GroupTheory)
 Consider this a playground for implementing fun group theory operations.
 
 ## Currently Implemented Functionality
